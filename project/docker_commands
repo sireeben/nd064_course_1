@@ -1,11 +1,45 @@
 ## Docker commands used to build the application 
 # TODO: insert the docker build command
+docker build -t techtrends .
 
 ## Docker commands used to run the application
 # TODO: insert the docker run command
+docker run -d -p 7111:3111 techtrends
 
 ## Docker commands used to get the application logs
 # TODO: insert the docker logs command
+docker logs c23864420de3
 
 ## Logs from the container running the TechTrends application
 # TODO: paste logs from the Docker container 
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:172.17.0.1 - - [30/Jun/2023 02:02:04] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [30/Jun/2023 02:02:04] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [30/Jun/2023 02:02:05] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:werkzeug:172.17.0.1 - - [30/Jun/2023 02:03:54] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [30/Jun/2023 02:03:54] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [30/Jun/2023 02:03:54] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:app:06/30/23 02:04:42, Article "2020 CNCF Annual Report" retrieved successfully!
+INFO:werkzeug:172.17.0.1 - - [30/Jun/2023 02:04:42] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [30/Jun/2023 02:04:42] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:06/30/23 02:04:46, About Us page retrieved successfully!
+INFO:werkzeug:172.17.0.1 - - [30/Jun/2023 02:04:46] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [30/Jun/2023 02:04:46] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [30/Jun/2023 02:04:47] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [30/Jun/2023 02:04:47] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:06/30/23 02:04:54, Article "Test" created
+INFO:werkzeug:172.17.0.1 - - [30/Jun/2023 02:04:54] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:172.17.0.1 - - [30/Jun/2023 02:04:54] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [30/Jun/2023 02:04:54] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [30/Jun/2023 02:05:16] "GET /metrics HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [30/Jun/2023 02:05:22] "GET /healthz HTTP/1.1" 200 -
+INFO:app:06/30/23 02:06:49, 404 Error - Page Not Found!
+INFO:werkzeug:172.17.0.1 - - [30/Jun/2023 02:06:49] "GET /11 HTTP/1.1" 404 -
+INFO:werkzeug:172.17.0.1 - - [30/Jun/2023 02:06:49] "GET /static/css/main.css HTTP/1.1" 304 -
