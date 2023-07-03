@@ -61,17 +61,17 @@ spec:
            httpGet:
              path: healthz
              port: 3111
-      ## Set the resource requests and limits for an application.
-      resources:
-          ## The resource requests guarantees that the desired amount 
-          ## CPU and memory is allocated for a pod. In this example, 
-          ## the pod will be allocated with 64 Mebibytes and 250 miliCPUs.
-            requests:
-              memory: "64Mi"
-              cpu: "250m"
-          ## The resource limits ensure that the application is not consuming 
-          ## more than the specified CPU and memory values. In this example, 
-          ## the pod will not surpass 128 Mebibytes and 500 miliCPUs.
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
+        ## Set the resource requests and limits for an application.
+        resources:
+            ## The resource requests guarantees that the desired amount 
+            ## CPU and memory is allocated for a pod. In this example, 
+            ## the pod will be allocated with 64 Mebibytes and 250 miliCPUs.
+              requests:
+                memory: "64Mi"
+                cpu: "250m"
+            ## The resource limits ensure that the application is not consuming 
+            ## more than the specified CPU and memory values. In this example, 
+            ## the pod will not surpass 128 Mebibytes and 500 miliCPUs.
+              limits:
+                memory: "128Mi"
+                cpu: "500m"
