@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    app: {{ .Values.image.repository }}
+  name: {{ .Values.image.repository }}
+  namespace: {{ .Values.namespace.name }}
+
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.image.repository }}
+
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+
+  template:
+    metadata:
+      labels:
+        app: techtrends
+
+    spec:
+      containers:
+      - image: {{ .Values.image.dockerRegistry }}/{{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        name: {{ .Values.image.repository }}
+
+        ports:
+        - containerPort: {{ .Values.containerPort }}
+          protocol: {{ .Values.service.type }}
+
+        livenessProbe:
+           httpGet:
+             path: {{ .Values.livenessProbe.path }}
+             port: {{ .Values.containerPort }}
+        readinessProbe:
+           httpGet:
+             path: {{ .Values.readinessProbe.path }}
+             port: {{ .Values.containerPort }}
+        resources:
+              requests:
+                memory: {{ .Values.resources.requests.memory }}
+                cpu: {{ .Values.resources.requests.cpu }}
+              limits:
+                memory: {{ .Values.resources.limits.memory }}
+                cpu: {{ .Values.resources.limits.cpu }}
