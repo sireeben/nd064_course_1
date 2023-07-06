@@ -32,7 +32,7 @@ spec:
 
         ports:
         - containerPort: {{ .Values.containerPort }}
-          protocol: {{ .Values.service.type }}
+          protocol: TCP
 
         livenessProbe:
            httpGet:
